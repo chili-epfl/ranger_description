@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<robot name="ranger">
+  <link name="base_link"/>
+  <link name="depth_camera_link"/>
+  <link name="l_wheel_link">
+    <visual>
+      <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://ranger_description/meshes/wheel.dae"/>
+      </geometry>
+    </visual>
+    <intertial>
+      <mass value="0.26"/>
+      <origin xyz="0.0 0.0 0.0"/>
+    </intertial>
+  </link>
+  <link name="r_wheel_link">
+    <visual>
+      <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://ranger_description/meshes/wheel.dae"/>
+      </geometry>
+    </visual>
+    <intertial>
+      <mass value="0.26"/>
+      <origin xyz="0.0 0.0 0.0"/>
+    </intertial>
+  </link>
+  <link name="l_eye_link">
+    <visual>
+      <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://ranger_description/meshes/eye.dae"/>
+      </geometry>
+    </visual>
+    <intertial>
+      <mass value="0.01"/>
+      <origin xyz="0.0 0.0 0.0"/>
+    </intertial>
+  </link>
+  <link name="r_eye_link">
+    <visual>
+      <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://ranger_description/meshes/eye.dae"/>
+      </geometry>
+    </visual>
+    <intertial>
+      <mass value="0.01"/>
+      <origin xyz="0.0 0.0 0.0"/>
+    </intertial>
+  </link>
+  <link name="box">
+    <visual>
+      <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://ranger_description/meshes/ranger.dae"/>
+      </geometry>
+    </visual>
+    <intertial>
+      <mass value="3.26"/>
+      <origin xyz="-0.049489 0.000892912 -0.0408259"/>
+    </intertial>
+  </link>
+
+  <joint name="base_link_depth_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="depth_camera_link"/>
+    <origin rpy="0 0.0 0.0" xyz="0.055 0.0 0.317"/>
+  </joint>
+  <joint name="base_link_box_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="box"/>
+    <origin rpy="0 0.0 0.0" xyz="-0.13 0.0 0.0"/>
+  </joint>
+  <joint name="base_link_l_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="l_wheel_link"/>
+    <origin rpy="1.52 0.0 0.0" xyz="0.0 -0.205 -0.011"/>
+  </joint>
+  <joint name="base_link_r_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="r_wheel_link"/>
+    <origin rpy="-1.52 0.0 0.0" xyz="0.0 0.205 -0.011"/>
+  </joint>
+  <joint name="base_link_l_eye_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="l_eye_link"/>
+    <origin rpy="0.0 1.52 0.0" xyz="0.055 -0.055 0.242"/>
+  </joint>
+  <joint name="base_link_r_eye_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="r_eye_link"/>
+    <origin rpy="0.0 1.52 0.0" xyz="0.055 0.055 0.242"/>
+  </joint>
+
+
+</robot>
+
