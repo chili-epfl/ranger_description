@@ -2,6 +2,10 @@
 <robot name="ranger">
   <link name="base_link"/>
   <link name="depth_camera_link"/>
+  <link name="rgb_camera_link"/>
+  <link name="ir_left"/>
+  <link name="ir_center"/>
+  <link name="ir_right"/>
   <link name="l_wheel_link">
     <intertial>
       <mass value="0.26"/>
@@ -41,7 +45,12 @@
   <joint name="base_link_depth_camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="depth_camera_link"/>
-    <origin rpy="0 0.0 0.0" xyz="0.055 0.0 0.317"/>
+    <origin rpy="0 0.0 0.0" xyz="0.055 0.051 0.36"/>
+  </joint>
+  <joint name="base_link_rgb_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rgb_camera_link"/>
+    <origin rpy="0 0.0 0.0" xyz="0.055 0.024 0.36"/>
   </joint>
   <joint name="base_link_box_joint" type="fixed">
     <parent link="base_link"/>
@@ -67,6 +76,22 @@
     <parent link="base_link"/>
     <child link="r_eye_link"/>
     <origin rpy="0.0 1.52 0.0" xyz="0.055 0.055 0.242"/>
+  </joint>
+
+  <joint name="base_link_ir_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ir_left"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.08 0.115 0.073"/>
+  </joint>
+  <joint name="base_link_ir_center_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ir_center"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.08 0.0 0.073"/>
+  </joint>
+  <joint name="base_link_ir_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ir_right"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.08 -0.115 0.073"/>
   </joint>
 
 
