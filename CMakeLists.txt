@@ -14,3 +14,6 @@ install(DIRECTORY launch/
 install(DIRECTORY urdf/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf)
 
+# Instructions to install config files
+install(DIRECTORY config/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config)
