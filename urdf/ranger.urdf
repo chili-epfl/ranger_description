@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="ranger">
   <link name="base_link"/>
+  <link name="camera_link"/>
   <link name="depth_camera_link"/>
   <link name="rgb_camera_link"/>
   <link name="ir_left"/>
@@ -42,10 +43,15 @@
       <origin xyz="-0.049489 0.000892912 -0.0408259"/>
     </intertial>
   </link>
+  <joint name="base_link_camera_joint" type="fixed">
+	<parent link="base_link"/>
+	<child link="camera_link"/>
+	<origin rpy="0 0.0 0.0" xyz="0.055 0.0 0.36"/>
+  </joint>
   <joint name="base_link_depth_camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="depth_camera_link"/>
-    <origin rpy="0 0.0 0.0" xyz="0.055 0.051 0.36"/>
+    <origin rpy="0 0.0 0.0" xyz="0.055 0.050 0.36"/>
   </joint>
   <joint name="base_link_rgb_camera_joint" type="fixed">
     <parent link="base_link"/>
